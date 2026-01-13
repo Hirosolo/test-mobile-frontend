@@ -1,7 +1,14 @@
 import { useEffect, useState } from 'react'
-import { Button, FlatList, StyleSheet, Text, TextInput, View } from 'react-native'
+import {
+  Button,
+  FlatList,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native'
 
-const API_URL = process.env.API_URL + 'api/todos'
+const API_URL = process.env.EXPO_PUBLIC_API_URL + 'api/todos'
 
 type Todo = {
   id: string
@@ -42,6 +49,7 @@ export default function HomeScreen() {
 
       <TextInput
         placeholder="New todo"
+        placeholderTextColor="#aaa"
         value={title}
         onChangeText={setTitle}
         style={styles.input}
@@ -61,15 +69,28 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 20, marginTop: 40 },
-  header: { fontSize: 26, marginBottom: 10 },
+  container: {
+    flex: 1,
+    padding: 20,
+    marginTop: 40,
+    backgroundColor: '#121212',
+  },
+  header: {
+    fontSize: 26,
+    marginBottom: 10,
+    color: 'white',
+  },
   input: {
     borderWidth: 1,
+    borderColor: 'white',
     padding: 10,
     marginBottom: 10,
+    color: 'white',
   },
   todo: {
     padding: 10,
     borderBottomWidth: 1,
+    borderBottomColor: '#333',
+    color: 'white',
   },
 })

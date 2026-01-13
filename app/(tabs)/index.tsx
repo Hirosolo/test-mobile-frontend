@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Button, FlatList, StyleSheet, Text, TextInput, View } from 'react-native'
 
-const API_URL = 'https://YOUR-VERCEL-APP.vercel.app/api/todos'
+const API_URL = process.env.API_URL + 'api/todos'
 
 type Todo = {
   id: string

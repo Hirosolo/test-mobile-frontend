@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native'
 
-const API_URL = process.env.EXPO_PUBLIC_API_URL + 'api/todos'
+const API_URL = 'https://test-tawny-chi-28.vercel.app/api/todos'
 
 type Todo = {
   id: string
@@ -42,6 +42,8 @@ export default function HomeScreen() {
   useEffect(() => {
     loadTodos()
   }, [])
+
+  console.log('API_URL:', API_URL)
 
   return (
     <View style={styles.container}>
